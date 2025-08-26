@@ -151,23 +151,31 @@ rare_character(Character) :-
     character_rarity(Character, Rarity),
     (Rarity = '5-star'; Rarity = 'SSR').
 
-% Правило 2. Список всех видеоигр.
-list_of_video_games(Games) :- 
-   findall(Game, game(Game), Games).
-
-% Правило 3: Персонажа тяжело получить если он женского пола с низким шансом выпадения
-waifu_hard_to_get(Character) :-
-    character_gender(Character, 'Female'),
-    drop_chance(Character, Chance),
-    Chance < 0.7.
-
-% Правило 4: Игра определенного жанра от определенного разработчика
-developer_genre(Developer, Genre) :-
+% Правило 2: Поиск игр по разработчику с указанием жанра
+games_by_developer_with_genre(Developer, Game, Genre) :-
     developed_by(Game, Developer),
     game_genre(Game, Genre).
 
-% Правило 5: Персонажи, которые используют меч
-sword_user(Character) :-
-    character_weapon(Character, Weapon),
-    (Weapon = 'Sword'; Weapon = 'Excalibur').
+% Правило 3: Поиск персонажей с низким шансом выпадения (< 1.0%)
+low_drop_characters(Character, Game, Chance) :-
+    character_in(Character, Game),
+    drop_chance(Character, Chance),
+    Chance < 1.0.
+    
+% Правило 4: Проверка, является ли персонаж SSR/5-star редкости
+is_high_rarity(Character) :-
+    character_rarity(Character, Rarity),
+    (Rarity = '5-star'; Rarity = 'SSR'; Rarity = '6-star'; Rarity = 'UR').
 
+% Правило 5: Поиск всех персонажей женского пола высокой редкости
+high_rarity_female_characters(Character, Game, Rarity) :-
+    character_gender(Character, 'Female'),
+    is_high_rarity(Character),
+    character_in(Character, Game),
+    character_rarity(Character, Rarity).
+
+% Правило 6: Поиск женских персонажей определенной редкости в игре
+female_character_of_rarity(GameName, RarityValue, Character) :-
+    character_in(Character, GameName),
+    character_gender(Character, 'Female'),
+    character_rarity(Character, RarityValue).
