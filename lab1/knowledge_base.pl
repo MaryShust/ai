@@ -42,10 +42,6 @@ genre('Simulation').
 genre('Strategy').
 genre('Card Game').
 
-% Пол персонажей
-gender('Male').
-gender('Female').
-
 % Редкость персонажей
 rarity('3-star').
 rarity('4-star').
