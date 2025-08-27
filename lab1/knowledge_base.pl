@@ -20,36 +20,6 @@ game('Snowbreak').
 game('Aether Gazer').
 game('Neural Cloud').
 
-% Разработчики
-developer('HoYoverse').
-developer('miHoYo').
-developer('TYPE-MOON').
-developer('Hypergryph').
-developer('Yostar').
-developer('Shift Up').
-developer('Perfect World').
-developer('Smilegate').
-developer('Nintendo').
-developer('Cygames').
-
-% Жанры
-genre('Action RPG').
-genre('Turn-based RPG').
-genre('Tactical RPG').
-genre('Gacha RPG').
-genre('Shooter').
-genre('Simulation').
-genre('Strategy').
-genre('Card Game').
-
-% Редкость персонажей
-rarity('3-star').
-rarity('4-star').
-rarity('5-star').
-rarity('6-star').
-rarity('SSR').
-rarity('UR').
-
 % Факты с двумя аргументами (отношения между объектами)
 % ------------------------------------------------------
 
