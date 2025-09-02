@@ -1,69 +1,72 @@
-
-
 % Married characters
-married("Caroline").
-married("Demetrius").
-married("Evelyn").
-married("George").
-married("Jodi").
-married("Kent").
-married("Robin").
-married("Pam").
-married("Marnie").
-married("Lewis").
+married("Владимир").
+married("Татьяна").
+married("Иван").
+married("Арина").
+married("Елена").
+married("Дмитрий").
+married("Антонина").
+married("Петр").
+married("Варвара").
+married("Михаил").
+married("Игорь").
+married("Алла").
+married("Евгения").
+married("Павел").
+married("Елизавета").
+married("Дмитрий К.").
+married("Даниил").
+married("Дарья").
+married("Карл").
+married("Валентина").
 
 % Bachelors
-bachelor("Alex").
-bachelor("Elliott").
-bachelor("Harvey").
-bachelor("Sam").
-bachelor("Sebastian").
-bachelor("Shane").
+bachelor("Николай").
+bachelor("Сергей").
+bachelor("Кирил").
+bachelor("Ильчин").
+bachelor("Леонид").
 
 % Bachelorettes
-bachelorette("Abigail").
-bachelorette("Emily").
-bachelorette("Haley").
-bachelorette("Leah").
-bachelorette("Maru").
-bachelorette("Penny").
+bachelorette("Алена").
+bachelorette("Марья").
+bachelorette("Екатерина").
+bachelorette("Анна").
 
-% Children
-child("Jas").
-child("Vincent").
-child("Leo").
+% Spouse relationships 
+spouse("Варвара", "Михаил").
+spouse("Антонина", "Петр").
+spouse("Елена", "Дмитрий").
+spouse("Татьяна", "Владимир").
+spouse("Арина", "Иван").
+spouse("Алла", "Игорь").
+spouse("Евгения", "Павел").
+spouse("Елизавета", "Дмитрий К.").
+spouse("Валентина", "Карл").
+spouse("Дарья", "Даниил").
 
-
-% Spouse relationships (canon couples)
-spouse("Kent", "Jodi").
-spouse("Jodi", "Kent").
-spouse("Demetrius", "Robin").
-spouse("Robin", "Demetrius").
-spouse("Caroline", "Pierre").
-spouse("Pierre", "Caroline").
-spouse("Evelyn", "George").
-spouse("George", "Evelyn").
+% Spouse relationships (divorced)
+divorced("Дарья","Захар").
+divorced("Валентина","Ярослав").
 
 % Parent relationships
-parent("Kent", "Sam").
-parent("Kent", "Vincent").
-parent("Jodi", "Sam").
-parent("Jodi", "Vincent").
-
-parent("Robin", "Sebastian").
-parent("Robin", "Maru").
-parent("Demetrius", "Maru").
-
-parent("Caroline", "Abigail").
-parent("Pierre", "Abigail").
-
-parent("Pam", "Penny").
-parent("Lewis", "Alex").
-parent("Marnie", "Alex").
-
-parent("Evelyn", "Marnie").
-parent("George", "Marnie").
-
+parent("Татьяна", "Марья").
+parent("Татьяна", "Иван").
+parent("Елена", "Ильчин").
+parent("Михаил", "Николай").
+parent("Михаил", "Алена").
+parent("Михаил", "Петр").
+parent("Антонина", "Татьяна").
+parent("Антонина", "Елена").
+parent("Игорь", "Сергей").
+parent("Игорь", "Анна").
+parent("Игорь", "Кирил").
+parent("Павел", "Алла").
+parent("Елизавета", "Павел").
+parent("Карл", "Елизавета").
+parent("Карл", "Даниил").
+parent("Даниил", "Екатерина").
+parent("Даниил", "Леонид").
 
 %rules
 
@@ -89,4 +92,4 @@ half_siblings(S1, S2):-
        	P1 \= P2, 	 % parents also couldn't be one person
 	not(parent(P2,S1)).  %the second parent can't be bio-parent of the first child )
 
-%spouse(X, Y) :- spouse(Y, X).
+spouse(X, Y) :- spouse(Y, X).
