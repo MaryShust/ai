@@ -19,6 +19,8 @@ married("Даниил Карлович Куранов").
 married("Дарья Владимировна Куранова").
 married("Карл Куранов").
 married("Валентина Сергеевна Куранова").
+married("Ярослав Владимирович Белый").
+married("Захар Иванович Курдюков").
 
 % Bachelors
 bachelor("Николай Михаилович Адамов").
@@ -250,3 +252,87 @@ male(Person) :-
         ;   sub_string(Person, _, _, _, "ерг")
         )
     ).
+
+% 20. Правило для вычисления возраста человека на момент смерти
+age_at_death(Person, Age) :-
+    dead(Person, DeathYear),
+    born(Person, BirthYear),
+    Age is DeathYear - BirthYear.
+
+% 21. Правило для вычисления длительности брака на момент смерти супруга или на текущий год
+marriage_duration(Person1, Person2, Duration) :-
+    spouse(Person1, Person2, WeddingDate),
+    extract_year(WeddingDate, WeddingYear),
+    (   (dead(Person1, DeathYear); dead(Person2, DeathYear))
+    ->  (dead(Person1, DeathYear) -> EndYear = DeathYear; EndYear = DeathYear),
+        Duration is EndYear - WeddingYear
+    ;   Duration is 2024 - WeddingYear
+    ).
+
+% 22. Правило для проверки, является ли человек вдовцом/вдовой
+widowed(Person) :-
+    married(Person),
+    spouse(Person, Spouse, _),
+    dead(Spouse, _),
+    alive(Person).
+
+% 23. Правило для родителей, переживших своего ребенка
+outlived_own_child(Parent) :-
+    parent(Parent, Child),
+    dead(Child, _),
+    alive(Parent).
+
+% 24. Правило для определения молодоженов (брак длится менее 5 лет)
+newlyweds(Husband, Wife) :-
+    spouse(Husband, Wife, WeddingDate),
+    extract_year(WeddingDate, WeddingYear),
+    YearsMarried is 2024 - WeddingYear,
+    YearsMarried < 5.
+
+% 25. Правило для определения, что брак был заключен до рождения ребенка
+married_before_child(Husband, Wife, Child) :-
+    spouse(Husband, Wife, WeddingDate),
+    extract_year(WeddingDate, WeddingYear),
+    born(Child, ChildBirthYear),
+    WeddingYear < ChildBirthYear.
+
+% 26. Правило для человека, который никогда не был в браке и старше 30 лет
+lifelong_bachelor(Person) :-
+    bachelor(Person);
+	bachelorette(Person),
+    age(Person, Age),
+    Age > 30.
+
+% 27. Правило для определения, что ребенок родился у молодых родителей (родителям было меньше 20 лет)
+born_to_teen_parents(Person) :-
+    parent(Parent, Person),
+    born(Parent, ParentBirthYear),
+    born(Person, PersonBirthYear),
+    ParentAge at PersonBirthYear is PersonBirthYear - ParentBirthYear,
+    ParentAge < 20.
+
+% 28. Правило для определения, что человек родился у родителей в зрелом возрасте (родителям было больше 35 лет)
+born_to_mature_parents(Person) :-
+    parent(Parent, Person),
+    born(Parent, ParentBirthYear),
+    born(Person, PersonBirthYear),
+    ParentAge at PersonBirthYear is PersonBirthYear - ParentBirthYear,
+    ParentAge > 35.
+
+% 29. Правило для определения количества лет брака
+age_gap_marriage(Husband, Wife, Diff) :-
+    %spouse(Husband, Wife, _),
+    age(Husband, AgeH),
+    age(Wife, AgeW),
+    Diff is abs(AgeH - AgeW).
+
+% 30. Правило для определения, что человек является старшим ребенком (родился раньше всех своих братьев и сестер)
+eldest_child(Person) :-
+    parent(Parent, Person),
+    born(Person, PersonBirthYear),
+    + (parent(Parent, Sibling), born(Sibling, SiblingBirthYear), SiblingBirthYear < PersonBirthYear).
+
+% 31. Правило для определения, что человек является единственным ребенком
+only_child(Person) :-
+    parent(Parent, Person),
+    + (parent(Parent, Sibling), Sibling = Person).
