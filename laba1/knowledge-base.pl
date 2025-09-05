@@ -129,10 +129,9 @@ age(Person, Age) :-
     current_year(CurrentYear),
     Age is CurrentYear - BirthYear.
 
-% 2.  Правило для определения, что человек является единственным ребенком
-only_child(Person) :-
-    parent(Parent, Person),
-    + (parent(Parent, Sibling), Sibling = Person).
+% 2.  Правило для определения, что человек является не единственным ребенком
+not_only_child(Person) :-
+    parent(Parent, Person), (parent(Parent, Sibling), Sibling \= Person).
 
 % 3. Сиблинги
 siblings(X, Y) :-
