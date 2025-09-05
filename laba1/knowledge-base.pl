@@ -129,10 +129,10 @@ age(Person, Age) :-
     current_year(CurrentYear),
     Age is CurrentYear - BirthYear.
 
-% 2. Разведены   
-divorced(X) :- 
-	married(X),       % X is in married list
-      	\+ spouse(X, _).  % but have no couple in spouse list
+% 2.  Правило для определения, что человек является единственным ребенком
+only_child(Person) :-
+    parent(Parent, Person),
+    + (parent(Parent, Sibling), Sibling = Person).
 
 % 3. Сиблинги
 siblings(X, Y) :-
@@ -333,8 +333,3 @@ eldest_child(Person) :-
     parent(Parent, Person),
     born(Person, PersonBirthYear),
     + (parent(Parent, Sibling), born(Sibling, SiblingBirthYear), SiblingBirthYear < PersonBirthYear).
-
-% 31. Правило для определения, что человек является единственным ребенком
-only_child(Person) :-
-    parent(Parent, Person),
-    + (parent(Parent, Sibling), Sibling = Person).
