@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontology/russian_family#"
+     xml:base="http://www.semanticweb.org/ontology/russian_family"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontology/russian_family"/>
+    
+    <!-- Классы -->
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Person"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Male"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Female"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Bachelor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Bachelorette"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Married"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Dead"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Adult"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/ontology/russian_family#Child"/>
+    
+    <!-- Свойства объектов -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#hasSpouse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#hasParent"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#hasChild"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#hasSibling"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#hasGrandparent"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#hasGrandchild"/>
+    
+    <!-- Свойства данных -->
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#bornDate"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#deathDate"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#marriageDate"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontology/russian_family#age"/>
+    
+    <!-- Индивиды - Шуст семья -->
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Владимир_Павлович_Шуст">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">03.09.1971</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Татьяна_Петровна_Шуст">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16.11.1973</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Иван_Владимирович_Шуст">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17.09.1999</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Арина_Александровна_Шуст">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17.08.1999</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Марья_Владимировна_Шуст">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Bachelorette"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17.07.2005</bornDate>
+    </Person>
+    
+    <!-- Адамов семья -->
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Николай_Михаилович_Адамов">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Bachelor"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31.12.1955</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Алена_Михайловна_Адамова">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Bachelorette"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07.04.1957</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Петр_Михаилович_Адамов">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Dead"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21.11.1955</bornDate>
+        <deathDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.04.2020</deathDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Антонина_Павловна_Адамова">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Dead"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20.09.1952</bornDate>
+        <deathDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09.05.2000</deathDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Варвара_Игнатова_Адамова">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Dead"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">03.05.1929</bornDate>
+        <deathDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21.04.2004</deathDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Михаил_Григорьевич_Адамов">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Dead"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20.06.1929</bornDate>
+        <deathDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14.01.2005</deathDate>
+    </Person>
+    
+    <!-- Федоров семья -->
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Игорь_Александрович_Федоров">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27.01.1965</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Алла_Павловна_Федорова">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20.09.1967</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Сергей_Игоревич_Федоров">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Bachelor"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.09.1986</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Кирилл_Игоревич_Федоров">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Bachelor"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16.07.1994</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Анна_Игоревна_Федорова">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Bachelorette"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12.03.1991</bornDate>
+    </Person>
+    
+    <!-- Исмаилов семья -->
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Елена_Петровна_Исмаилова">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24.09.1978</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Дмитрий_Дмитриевич_Исмаилов">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15.03.1976</bornDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Эльчин_Дмитриевич_Исмаилов">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Bachelor"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">02.02.2000</bornDate>
+    </Person>
+    
+    <!-- Куранов семья -->
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Даниил_Карлович_Куранов">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Male"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Dead"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19.04.1908</bornDate>
+        <deathDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">03.08.2003</deathDate>
+    </Person>
+    
+    <Person rdf:about="http://www.semanticweb.org/ontology/russian_family#Дарья_Владимировна_Куранова">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Female"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Married"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontology/russian_family#Dead"/>
+        <bornDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11.05.1912</bornDate>
+        <deathDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.09.2008</deathDate>
+    </Person>
+    
+    <!-- Отношения между индивидами -->
+    <!-- Супружеские отношения -->
+    <hasSpouse>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Владимир_Павлович_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Татьяна_Петровна_Шуст"/>
+    </hasSpouse>
+    
+    <hasSpouse>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Иван_Владимирович_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Арина_Александровна_Шуст"/>
+    </hasSpouse>
+    
+    <hasSpouse>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Петр_Михаилович_Адамов"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Антонина_Павловна_Адамова"/>
+    </hasSpouse>
+    
+    <hasSpouse>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Михаил_Григорьевич_Адамов"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Варвара_Игнатова_Адамова"/>
+    </hasSpouse>
+    
+    <!-- Родительские отношения -->
+    <hasParent>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Марья_Владимировна_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Владимир_Павлович_Шуст"/>
+    </hasParent>
+    
+    <hasParent>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Марья_Владимировна_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Татьяна_Петровна_Шуст"/>
+    </hasParent>
+    
+    <hasParent>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Иван_Владимирович_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Владимир_Павлович_Шуст"/>
+    </hasParent>
+    
+    <hasParent>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Иван_Владимирович_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Татьяна_Петровна_Шуст"/>
+    </hasParent>
+    
+    <!-- Обратные отношения для hasChild -->
+    <hasChild>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Владимир_Павлович_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Марья_Владимировна_Шуст"/>
+    </hasChild>
+    
+    <hasChild>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Владимир_Павлович_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Иван_Владимирович_Шуст"/>
+    </hasChild>
+    
+    <hasChild>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Татьяна_Петровна_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Марья_Владимировна_Шуст"/>
+    </hasChild>
+    
+    <hasChild>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Татьяна_Петровна_Шуст"/>
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontology/russian_family#Иван_Владимирович_Шуст"/>
+    </hasChild>
+    
+</rdf:RDF>
